@@ -79,7 +79,7 @@ logger = logging.getLogger(__name__)
 
 
 class CloudMonkeyShell(cmd.Cmd, object):
-    intro = ("☁ Apache CloudStack 🐵 cloudmonkey " + __version__ +
+    intro = ("☁ CloudByte ElastiMonkey " + __version__ +
              ". Type help or ? to list commands.\n")
     ruler = "="
     config_options = []
@@ -88,10 +88,10 @@ class CloudMonkeyShell(cmd.Cmd, object):
     interpreterMode = False
     error_on_last_command = False
     param_cache = {}
-    prompt = "🐵 > "
+    prompt = "cloudbyte > "
     protocol = "http"
     host = "localhost"
-    port = "8080"
+    port = "443"
     path = "/client/api"
 
     def __init__(self, pname, cfile):
@@ -372,7 +372,7 @@ class CloudMonkeyShell(cmd.Cmd, object):
         if not api:
             return
         logger.debug("Updating param cache for %s API" % api)
-        responsekey = filter(lambda x: 'response' in x, result.keys())[0]
+        responsekey = filter(lambda x: 'response' in x or 'Response' in x, result.keys())[0]
         result = result[responsekey]
         options = []
         uuids = []
@@ -458,7 +458,7 @@ class CloudMonkeyShell(cmd.Cmd, object):
             return
 
         try:
-            responsekeys = filter(lambda x: 'response' in x, result.keys())
+            responsekeys = filter(lambda x: 'response' in x or 'Response' in x, result.keys())
             for responsekey in responsekeys:
                 self.print_result(result[responsekey], field_filter)
             if apiname.startswith("list") and "id" not in args_dict:

@@ -48,12 +48,12 @@ except ImportError:
 
 # Upgrade notes for 5.3.0
 print "If you're upgrading, run the following to enable parameter completion:"
-print "  cloudmonkey sync"
-print "  cloudmonkey set paramcompletion true"
+print "  elastimonkey sync"
+print "  elastimonkey set paramcompletion true"
 print "Parameter completion may fail, if the above is not run!"
 
 setup(
-    name = 'cloudmonkey',
+    name = 'elastimonkey',
     version = __version__,
     author = __project__,
     author_email = __projectemail__,
@@ -61,7 +61,7 @@ setup(
     maintainer_email = __maintaineremail__,
     url = __projecturl__,
     description = __description__,
-    long_description = "cloudmonkey is a CLI for Apache CloudStack",
+    long_description = "elastimonkey is a CLI for Cloudbyte Elastistor",
     platforms = ("Any",),
     license = 'ASL 2.0',
     packages = find_packages(),
@@ -81,6 +81,6 @@ setup(
     ],
     entry_points="""
     [console_scripts]
-    cloudmonkey = cloudmonkey.cloudmonkey:main
+    elastimonkey = cloudmonkey.cloudmonkey:main
     """,
 )

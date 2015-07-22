@@ -277,11 +277,11 @@ def monkeyrequest(command, args, isasync, asyncblock, logger, url,
     if not response or not isinstance(response, dict):
         return response, error
 
-    if 'response' not in response:
+    if ('response' or 'Response') not in response.keys()[0]:
         return response, 'Invalid response received: %s' % response
 
     isasync = isasync and (asyncblock == "true" or asyncblock == "True")
-    responsekey = filter(lambda x: 'response' in x, response.keys())[0]
+    responsekey = filter(lambda x: 'response' in x or 'Response' in x, response.keys())[0]
 
     if isasync and 'jobid' in response[responsekey]:
         jobid = response[responsekey]['jobid']

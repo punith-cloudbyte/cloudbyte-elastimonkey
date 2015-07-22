@@ -16,13 +16,13 @@
 # specific language governing permissions and limitations
 # under the License.
 
-__version__ = "5.3.2"
-__description__ = "Command Line Interface for Apache CloudStack"
-__maintainer__ = "The Apache CloudStack Team"
-__maintaineremail__ = "dev@cloudstack.apache.org"
-__project__ = "The Apache CloudStack Team"
-__projectemail__ = "dev@cloudstack.apache.org"
-__projecturl__ = "http://cloudstack.apache.org"
+__version__ = "1.0.0"
+__description__ = "Command Line Interface for Cloudbyte Elastistor"
+__maintainer__ = "The Cloudbyte Team"
+__maintaineremail__ = "cb-devman@cloudbyte.com"
+__project__ = "Elasticenter CLI"
+__projectemail__ = "cb-devman@cloudbyte.com"
+__projecturl__ = "http://cloudbyte.com"
 
 try:
     import os
@@ -41,12 +41,12 @@ iterable_type = ['set', 'list', 'object']
 # cloudmonkey display types
 display_types = ["json", "xml", "csv", "table", "default"]
 
-config_dir = expanduser('~/.cloudmonkey')
+config_dir = expanduser('~/.elastimonkey')
 config_file = expanduser(config_dir + '/config')
 
 # cloudmonkey config fields
 mandatory_sections = ['core', 'ui']
-default_profile_name = 'local'
+default_profile_name = 'cloudbyte'
 config_fields = {'core': {}, 'ui': {}}
 
 # core
@@ -59,12 +59,12 @@ config_fields['core']['profile'] = default_profile_name
 
 # ui
 config_fields['ui']['color'] = 'true'
-config_fields['ui']['prompt'] = '🐵 > '
+config_fields['ui']['prompt'] = 'elastimonkey > '
 config_fields['ui']['display'] = 'default'
 
 # default profile
 default_profile = {}
-default_profile['url'] = 'http://localhost:8080/client/api'
+default_profile['url'] = 'http://localhost/client/api'
 default_profile['timeout'] = '3600'
 default_profile['expires'] = '600'
 default_profile['username'] = 'admin'
@@ -72,7 +72,7 @@ default_profile['password'] = 'password'
 default_profile['domain'] = '/'
 default_profile['apikey'] = ''
 default_profile['secretkey'] = ''
-default_profile['verifysslcert'] = 'true'
+default_profile['verifysslcert'] = 'false'
 default_profile['signatureversion'] = '3'
 
 
