@@ -1,9 +1,9 @@
-## CloudMonkey
+## ElastiMonkey
 
-`cloudmonkey` is a command line interface for [Apache CloudStack](http://cloudstack.apache.org).
-CloudMonkey can be use both as an interactive shell and as a command line tool
-which simplifies Apache CloudStack configuration and management. It can be used
-with Apache CloudStack 4.0-incubating and above.
+`elastimonkey` is a command line interface for [CloudByte ElastiStor](http://www.cloudbyte.com/).
+ElastiMonkey can be used both as an interactive shell and as a command line tool
+which simplifies CloudByte ElastiStor configuration and management. It can be used
+with CloudByte ElastiStor 1.4.0-p6 and above.
 
 ![version badge](https://badge.fury.io/py/cloudmonkey.png) ![download badge](http://img.shields.io/pypi/dm/cloudmonkey.png)
 
